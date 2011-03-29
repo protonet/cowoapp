@@ -1,0 +1,20 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  creator_id: 1
+  in_use: false
+  is_valid: true
+  used_on: null
+  expire_date: 2021-03-22
+
+
+two:
+  type: 'FulltimeTicket'
+  user_id: 1
+  creator_id: 1
+  in_use: false
+  is_valid: true
+  used_on: null
+  expire_date: 2021-03-22
+

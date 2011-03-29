@@ -1,0 +1,145 @@
+/* =GENERAL
+
+    COLORS:
+      blue        #487bff   rgb(72, 123, 255) - MAIN COLOR, USE FOR LINKS AND CHANNEL HIGHLIGHTING
+      orange      #ff7f31   rgb(255, 127, 49) - USE FOR HIGHLIGHTING USER STUFF (own meeps, user replies, buttons, ...)
+      red/rosa    #e75c79   rgb(231, 92, 121) - USE FOR NOTIFICATIONS (flash messages, badges, ...)
+      green       #00cc00   rgb(0, 204, 0)
+      black       #000      rgb(0, 0, 0)
+      grey_dark   #666      rgb(102, 102, 102)
+      grey        #999      rgb(153, 153, 153)
+      grey_light  #ccc      rgb(204, 204, 204)
+      white       #fff      rgb(255, 255, 255)
+=========================================================================== */
+@font-face {
+  font-family: "Univers Light Condensed";
+  src: url("/css/fonts/Univers Light Condensed.ttf");
+}
+
+@font-face {
+  font-family: "Univers LT 47 CondensedLt";
+  src: url("/css/fonts/Univers LT 47 Condensed Light.ttf");
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  position: relative;
+  overflow-y: scroll;
+  background: #dae4ff; /* Same as rgba(72, 123, 255, 0.2); which creates a very buggy background effect in opera 10.64 */
+  color: #000;
+}
+
+.inner-body {
+  margin: 0 auto;
+  width: 940px;
+}
+
+body,
+select,
+textarea,
+input {
+  font: 12px/1.4em Verdana, sans-serif;
+}
+
+a {
+  color: #000;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a:hover {
+  color: rgb(72, 123, 255);
+}
+
+:focus {
+  outline: 0;
+}
+
+a:focus {
+  outline: 1px dotted #666;
+}
+
+img:-moz-broken{
+  -moz-force-broken-image-icon: 1;
+}
+
+h5 {
+  font-size: 12px;
+}
+
+mark {
+  display: inline;
+  background: rgba(0, 204, 0, 0.25);
+}
+
+button {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  background: rgb(255, 127, 49);
+  background: -moz-linear-gradient(100% 100% 90deg, rgba(255, 127, 49, 0.7), rgba(255, 127, 49, 1));
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 127, 49, 1)), to(rgba(255, 127, 49, 0.7)));
+  border: 1px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+  padding: 2px 15px;
+  -moz-box-shadow: 0 0 4px #666;
+  -webkit-box-shadow: 0 0 4px #666;
+  box-shadow: 0 0 4px #666;
+}
+
+button:hover {
+  background: rgb(255, 127, 49);
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0 none;
+}
+
+output {
+  display: block;
+}
+
+section,
+aside {
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background: rgb(255, 255, 255);
+  display: inline-block;
+  vertical-align: top;
+}
+
+section.main {
+  width: 650px;
+  min-height: 500px;
+  margin: 0 20px 0 0;
+  position: relative;
+}
+
+/*=========================================================================== */
+
+#page {
+	background-color:#f00;
+	width:800px;
+}
+
+#user {
+	width:300px;
+}
+
+#tickets table td {
+	text-align:right;
+	background-color:#ddd;
+	padding:2px;
+}
+#tickets table th {
+	padding:3px;
+}
+#tickets table .FulltimeTicket td {
+	background-color:#f1e1e1;
+}

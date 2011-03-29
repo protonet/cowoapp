@@ -1,0 +1,64 @@
+<style>
+  #user {float:left;}
+  #tickets {float:right;}
+</style>
+
+<div id="user">
+  Welcome <%= @user.name %>  
+  
+  <p style="white-space: pre-wrap">
+  <% if @current_ticket.count > 0 %>
+    <%= protonet_link %>
+    <%= link_to "Betahaus Wiki", "http://wiki.betahaus.lan"%>
+    
+  <% else %>
+    You have to purchase a ticket
+    to access the internet. 
+    
+    You can use <%= protonet_link %> 
+      to chat with others here.
+      
+    Or visit our <%= link_to "Betahaus Wiki", "http://wiki.betahaus.lan"%> 
+  <% end %>
+  </p>
+</div>
+
+<div id="tickets">
+  
+  <table>
+    <tr>
+      <th>Type</th>
+      <th>Days</th>
+      <th>In use</th>
+      <th>Used on</th>
+      <th>Expire date</th>
+      <th>internet access</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @tickets.each do |ticket| %>
+    <tr class="<%= ticket.type %>">
+      <td><%= ticket.type %></td>
+      <td><%= ticket.day_count %></td>
+      <td><%= ticket.in_use %></td>
+      <td><%= ticket.used_on %></td>
+      <td><%= ticket.expire_date %></td>
+      <td><%= link_to 'Use now', tickets_path %></td>
+    </tr>
+  <% end %>
+  </table>
+  
+  <hr style="margin-top:20px;margin-bottom:20px" />
+  
+  <div id="buy-ticket">
+    <%= render 'ticket_form' %>
+  </div>
+
+  <p style="background-color:#666;color:#ccc;white-space: pre-wrap">
+  CURRENT TICKET:
+  <%=@current_ticket.inspect%>
+  </p>
+  
+</div>
+

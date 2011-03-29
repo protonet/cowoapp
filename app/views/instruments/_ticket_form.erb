@@ -1,0 +1,26 @@
+<%= form_for :ticket, :url => tickets_path do |f| %>
+  <%# if @ticket.errors.any?%>
+  <% if false %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+      <ul>
+      <% @ticket.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <label>Choose a Ticket:</label> 
+    <%= f.select :type,
+    [
+      ['One day ticket', 'one-day'],
+      ['week ticket (5 days)', 'five-day'],
+      ['12 days ticket', 'twelve-day'],
+      ['full month ticket', 'month'] 
+    ] %>
+
+    <%= f.submit "purchase ticket" %>
+
+<% end %>
