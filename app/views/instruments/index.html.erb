@@ -1,13 +1,13 @@
 <style>
-  #user {float:left;}
-  #tickets {float:right;}
+  #user {float:left; margin-right:25px;}
+  #tickets {float:left;}
 </style>
 
 <div id="user">
   Welcome <%= @user.name %>  
   
   <p style="white-space: pre-wrap">
-  <% if @current_ticket.count > 0 %>
+  <% if @current_ticket %>
     <%= protonet_link %>
     <%= link_to "Betahaus Wiki", "http://wiki.betahaus.lan"%>
     
@@ -37,14 +37,21 @@
       <th></th>
     </tr>
 
-  <% @tickets.each do |ticket| %>
-    <tr class="<%= ticket.type %>">
-      <td><%= ticket.type %></td>
-      <td><%= ticket.day_count %></td>
-      <td><%= ticket.in_use %></td>
-      <td><%= ticket.used_on %></td>
-      <td><%= ticket.expire_date %></td>
-      <td><%= link_to 'Use now', tickets_path %></td>
+  <% @tickets.each do |t| %>
+    <tr class="<%= t.type %><%= (t.in_use) ? ' in_use' : '' %> <%= (!t.is_valid) ? ' not_valid' : '' %>">
+      <td><%= t.type %>(<%= t.id %>)</td>
+      <td><%= t.days_left %> (<%= t.day_count %>)</td>
+      <td><%= t.in_use %></td>
+      <td><%= t.used_on %></td>
+      <td><%= t.expire_date %></td>
+
+<% if !@current_ticket %>      
+      <td><%= link_to 'Use now', use_ticket_path(t.id) %></td>
+<% else %>
+      <td><%= (@current_ticket.id == t.id) ? "ACTIVE TICKET (#{t.id})" : "-" %></td>
+<% end %>
+      
+
     </tr>
   <% end %>
   </table>
@@ -55,10 +62,10 @@
     <%= render 'ticket_form' %>
   </div>
 
-  <p style="background-color:#666;color:#ccc;white-space: pre-wrap">
+  <!-- <p style="width:500px;background-color:#666;color:#ccc;white-space: pre-wrap">
   CURRENT TICKET:
   <%=@current_ticket.inspect%>
-  </p>
+  </p> -->
   
 </div>
 

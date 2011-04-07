@@ -4,7 +4,7 @@ class CreateTickets < ActiveRecord::Migration
       t.integer :user_id
       t.integer :creator_id
       t.boolean :in_use, :default => false
-      t.datetime :in_use_date
+      t.date :in_use_date
       t.boolean :is_valid, :default => true
       t.datetime :used_on
       t.date :expire_date

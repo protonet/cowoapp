@@ -10,7 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110322145832) do
+ActiveRecord::Schema.define(:version => 20110331145648) do
+
+  create_table "ticket_logs", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "ticket_id"
+    t.string   "ip"
+    t.string   "mac"
+    t.string   "device_name"
+    t.string   "usage"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tickets", :force => true do |t|
     t.integer  "user_id"

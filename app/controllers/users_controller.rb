@@ -1,6 +1,19 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
+
+  def internet_allowed
+    user = User.where("id = #{params[:id]}")
+    user = User.find(:first)
+    if true
+        render :text => user.internet_allowed
+    else
+      false
+    end
+    
+  end
+
+
   def index
     @users = User.all
 

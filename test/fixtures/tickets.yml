@@ -1,20 +1,23 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  user_id: 1
+  type: 'ParttimeTicket'
+  user_id: 10
   creator_id: 1
   in_use: false
+  day_count: 2
+  days_left: 1
   is_valid: true
   used_on: null
   expire_date: 2021-03-22
 
 
-two:
-  type: 'FulltimeTicket'
-  user_id: 1
-  creator_id: 1
-  in_use: false
-  is_valid: true
-  used_on: null
-  expire_date: 2021-03-22
-
+# two:
+#   type: 'FulltimeTicket'
+#   user_id: 10
+#   creator_id: 1
+#   in_use: false
+#   is_valid: true
+#   used_on: null
+#   expire_date: 2021-03-22
+# 

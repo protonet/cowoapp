@@ -83,6 +83,14 @@ class TicketsController < ApplicationController
       end
     end
   end
+  
+  def use
+    # TODO user_id check
+    ticket = current_user.tickets.find(params[:id])
+    ticket.use
+    
+    redirect_to("/")  
+  end
 
   # DELETE /tickets/1
   # DELETE /tickets/1.xml

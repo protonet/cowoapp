@@ -125,7 +125,6 @@ section.main {
 
 #page {
 	background-color:#f00;
-	width:800px;
 }
 
 #user {
@@ -142,4 +141,11 @@ section.main {
 }
 #tickets table .FulltimeTicket td {
 	background-color:#f1e1e1;
+}
+
+#tickets table .in_use td {
+	background-color:#99cccc;
+}
+#tickets table .not_valid td {
+	background-color:#999999;
 }

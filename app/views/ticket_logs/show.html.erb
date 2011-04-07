@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @ticket_log.user_id %>
+</p>
+
+<p>
+  <b>Ticket:</b>
+  <%= @ticket_log.ticket_id %>
+</p>
+
+<p>
+  <b>Ip:</b>
+  <%= @ticket_log.ip %>
+</p>
+
+<p>
+  <b>Mac:</b>
+  <%= @ticket_log.mac %>
+</p>
+
+<p>
+  <b>Device name:</b>
+  <%= @ticket_log.device_name %>
+</p>
+
+<p>
+  <b>Usage:</b>
+  <%= @ticket_log.usage %>
+</p>
+
+
+<%= link_to 'Edit', edit_ticket_log_path(@ticket_log) %> |
+<%= link_to 'Back', ticket_logs_path %>

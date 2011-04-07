@@ -1,0 +1,17 @@
+# # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+# 
+# one:
+#   user_id: 10
+#   ticket_id: 1
+#   ip: MyString
+#   mac: MyString
+#   device_name: MyString
+#   usage: MyString
+# 
+# two:
+#   user_id: 10
+#   ticket_id: 1
+#   ip: MyString
+#   mac: MyString
+#   device_name: MyString
+#   usage: MyString

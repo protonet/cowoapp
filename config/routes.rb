@@ -1,5 +1,9 @@
 Cowoapp::Application.routes.draw do
+  resources :ticket_logs
+
   resources :tickets
+  match "tickets/use/:id" => "tickets#use", :as => "use_ticket"
+  match "users/internet_allowed/:id" => "users#internet_allowed", :as => "user_internet_allowed"
 
   resources :users
 
